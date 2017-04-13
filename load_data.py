@@ -31,11 +31,16 @@ def load_fer2013(path="."):
 	for i in range(x_train.shape[0]):
 		x_train[i] = np.array(map(lambda x: int(x), x_train[i].split()))
 	x_train = np.column_stack(x_train).T
-	x_train = x_train.reshape((-1, 48, 48))
 	for i in range(x_test.shape[0]):
 		x_test[i] = np.array(map(lambda x: int(x), x_test[i].split()))
 	x_test = np.column_stack(x_test).T
-	x_test = x_test.reshape((-1, 48, 48))
+
+	# normalize the dataset
+	x_train = np.divide(np.subtract(x_train, np.mean(x_train, axis=0)), np.std(x_train, axis=0))
+	x_test = np.divide(np.subtract(x_test, np.mean(x_test, axis=0)), np.std(x_test, axis=0))
+	
+	x_train = x_train.reshape((-1, 48, 48, 1))
+	x_test = x_test.reshape((-1, 48, 48, 1))
 	print "Dataset loaded successfully.."
 
 	return [x_train, y_train, x_test, y_test]
