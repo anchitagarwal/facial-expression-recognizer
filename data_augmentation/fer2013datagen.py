@@ -23,8 +23,8 @@ def reconstruct(pix_str, size=(48,48)):
 
 def emotion_count(y_train, classes, verbose=True):
     emo_classcount = {}
-    print 'Disgust classified as Angry'
-    y_train.loc[y_train == 1] = 0
+    # print 'Disgust classified as Angry'
+    # y_train.loc[y_train == 1] = 0
 
     # classes.remove('Disgust')
     for new_num, _class in enumerate(classes):
