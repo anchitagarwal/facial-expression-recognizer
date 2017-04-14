@@ -12,8 +12,8 @@ class Trainer():
 		self.trainPaths = trainPaths
 
 	def getExtractors(self):
-		hhfe = HueHistogramFeatureExtractor(10)
-		ehfe = EdgeHistogramFeatureExtractor(10)
+		# hhfe = HueHistogramFeatureExtractor(10)
+		ehfe = EdgeHistogramFeatureExtractor(30)
 		haarfe = HaarLikeFeatureExtractor(fname='haar.txt')
 		return [hhfe,ehfe,haarfe]
 
