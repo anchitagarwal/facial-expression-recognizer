@@ -15,7 +15,7 @@ class Trainer():
 		# hhfe = HueHistogramFeatureExtractor(10)
 		ehfe = EdgeHistogramFeatureExtractor(30)
 		haarfe = HaarLikeFeatureExtractor(fname='haar.txt')
-		return [hhfe,ehfe,haarfe]
+		return [ehfe,haarfe]
 
 	def getClassifiers(self,extractors):
 		props ={
